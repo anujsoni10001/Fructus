@@ -8,9 +8,37 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+// MARK: - property
+    @State private var isShowingSettings = false
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+     
+        NavigationView{
+        List(fruitsdata.shuffled()){item in
+        NavigationLink(destination:FruitDetailView(fruit:item)){
+        FruitRowView(fruit: item)
+                .padding(.vertical,4)
+        }
+        }
+        .navigationTitle("Fruits")
+        .navigationBarItems(trailing:
+//        Button(action: {
+//        isShowingSettings = true
+//        }) {
+//        Image(systemName:"slider.horizontal.3")
+//        }
+        
+        Button{
+        isShowingSettings = true
+        } label: {
+        Image(systemName:"slider.horizontal.3")
+        }
+        .sheet(isPresented:$isShowingSettings){
+        SettingsView()
+        }
+        )
+        }
     }
 }
 
