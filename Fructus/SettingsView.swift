@@ -11,7 +11,8 @@ struct SettingsView: View {
     
     // MARK: - property
    @Environment(\.presentationMode) var presentationMode
-        
+    @AppStorage("isOnboarding") var isOnboarding:Bool = false
+    
     var body: some View {
         NavigationView{
         ScrollView(.vertical, showsIndicators:false){
@@ -35,8 +36,52 @@ struct SettingsView: View {
         }
         
         // MARK: - Section 2
-      
+        GroupBox(label:
+        SettingsLabelView(titlename: "CUSTOMIZATION", imageName: "paintbrush")
+        ){
+        Divider().padding(.vertical,4)
+            
+                   
+        Text("If you wish, you can restart the application Dy togale the switch in this box. That wav it starts the onboardina process and vou will see the welcome screen again.")
+        .padding(.vertical,8)
+        .frame(minHeight:60)
+        .layoutPriority(1)
+        .font(.footnote)
+        .multilineTextAlignment(.leading)
+        
+
+        Toggle(isOn:$isOnboarding) {
+        if isOnboarding {
+        Text("restarted".uppercased())
+        .fontWeight(.bold)
+        .foregroundColor(.green)
+        }
+        else{
+        Text("restart".uppercased())
+        .fontWeight(.bold)
+        .foregroundColor(.secondary)
+        }
+        }
+        .padding()
+        .background(Color(UIColor.tertiarySystemBackground).clipShape(RoundedRectangle(cornerRadius: 8, style:.continuous)))
+//        .background(Color.white.clipShape(RoundedRectangle(cornerRadius: 8, style:.continuous)))
+            
+        }
+            
+            
         // MARK: - Section 3
+        GroupBox(label:
+                SettingsLabelView(titlename: "application", imageName: "apps.iphone")
+        ){
+        SettingsRowView(name: "Developer", content: "Anuj Soni",linklabel:nil,linkdestination:nil)
+        SettingsRowView(name: "Designer", content: "Asdulla Behlim",linklabel:nil,linkdestination:nil)
+        SettingsRowView(name: "Compatibility", content: "iOS 14",linklabel:nil,linkdestination:nil)
+        SettingsRowView(name: "Website", content: nil,linklabel:"Wikipedia",linkdestination:"en.wikipedia.org/wiki/Main_Page")
+        SettingsRowView(name: "Twitter", content: nil,linklabel:"@anujsoni10001",linkdestination:"twitter.com/anujsoni10001")
+        SettingsRowView(name: "SwiftUI", content: "2.0",linklabel:nil,linkdestination:nil)
+        SettingsRowView(name: "Version", content: "1.1.0",linklabel:nil,linkdestination:nil)
+        }
+            
         }
         .padding()
         

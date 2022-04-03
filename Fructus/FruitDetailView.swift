@@ -57,8 +57,9 @@ struct FruitDetailView: View {
        .navigationTitle(fruit.title)
        .navigationBarTitleDisplayMode(.inline)
        .navigationBarHidden(true)
+       
       }//navigation
-    
+      .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 
