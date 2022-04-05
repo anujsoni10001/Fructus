@@ -58,6 +58,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4B0F7B0B27FC31080078A122 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				4B8C28C227EEDEBD0029D805 /* FructusApp.swift */,
+				4B8C28C427EEDEBD0029D805 /* ContentView.swift */,
+				4B57968927F02DF8009511AA /* OnboardingView.swift */,
+				4B73675A27F178BA005DEA7C /* FruitDetailView.swift */,
+				4BEB57E827F81563006E01A2 /* SettingsView.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
 		4B57968B27F0320C009511AA /* Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -96,8 +108,8 @@
 				4B57968C27F0321D009511AA /* Model */,
 				4B57968B27F0320C009511AA /* Data */,
 				4BDF9A7B27EF063800A3461D /* View */,
-				4BDF9A7A27EF05DD00A3461D /* App */,
 				4B8C28C627EEDEBF0029D805 /* Assets.xcassets */,
+				4B0F7B0B27FC31080078A122 /* App */,
 				4B8C28C827EEDEBF0029D805 /* Preview Content */,
 			);
 			path = Fructus;
@@ -109,18 +121,6 @@
 				4B8C28C927EEDEBF0029D805 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		4BDF9A7A27EF05DD00A3461D /* App */ = {
-			isa = PBXGroup;
-			children = (
-				4B8C28C227EEDEBD0029D805 /* FructusApp.swift */,
-				4B8C28C427EEDEBD0029D805 /* ContentView.swift */,
-				4B57968927F02DF8009511AA /* OnboardingView.swift */,
-				4B73675A27F178BA005DEA7C /* FruitDetailView.swift */,
-				4BEB57E827F81563006E01A2 /* SettingsView.swift */,
-			);
-			name = App;
 			sourceTree = "<group>";
 		};
 		4BDF9A7B27EF063800A3461D /* View */ = {
