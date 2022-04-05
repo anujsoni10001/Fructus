@@ -51,6 +51,7 @@ struct SettingsView: View {
         
 
         Toggle(isOn:$isOnboarding) {
+        
         if isOnboarding {
         Text("restarted".uppercased())
         .fontWeight(.bold)
@@ -61,6 +62,7 @@ struct SettingsView: View {
         .fontWeight(.bold)
         .foregroundColor(.secondary)
         }
+        
         }
         .padding()
         .background(Color(UIColor.tertiarySystemBackground).clipShape(RoundedRectangle(cornerRadius: 8, style:.continuous)))
